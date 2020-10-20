@@ -1,26 +1,16 @@
-import { ContactMaterial, Cylinder, Material, Vec3 } from "cannon-es";
-import {
-  BoxGeometry,
-  CylinderGeometry,
-  Mesh,
-  MeshBasicMaterial,
-  MeshPhongMaterial,
-  PerspectiveCamera,
-} from "three";
+import { Cylinder, Material } from "cannon-es";
+import { CylinderGeometry, MeshPhongMaterial, PerspectiveCamera } from "three";
 
 import GameObject from "../models/GameObject";
-import { PlayerControls } from "../modules/player/PlayerControls";
-import { CapsuleCollider } from "../models/colliders/CapsuleCollider";
+import PlayerControls from "../modules/player/PlayerControls";
 
 const SPEED = 2;
 const RUN_MULTIPLIER = 1.5;
 
 export default class Player extends GameObject {
   public camera: PerspectiveCamera;
-  public controls: any;
-
-  public inputs = { vertical: 0, horizontal: 0 };
-  public isSprinting = false;
+  public controls: PlayerControls;
+  public attack: PlayerAttack;
 
   constructor() {
     super(
@@ -42,29 +32,30 @@ export default class Player extends GameObject {
     this.body.fixedRotation = true;
     this.body.updateMassProperties();
 
-    this.initCamera();
-    this.initControls();
+    this.camera = this.createCamera();
+    this.controls = this.createControls();
   }
 
-  initControls() {
+  createControls() {
     this.body.linearDamping = 0.975;
 
-    this.controls = new PlayerControls(this.camera, this.body);
-    this.mesh.add(this.controls.getObject());
+    return new PlayerControls(this);
   }
 
   update(delta: number) {
     this.controls.update(delta);
   }
 
-  initCamera() {
-    this.camera = new PerspectiveCamera(
+  createCamera() {
+    const camera = new PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
-    this.camera.position.set(0, 0.8, 0);
-    // this.mesh.add(this.camera);
+    camera.position.set(0, 0.8, 0);
+    this.mesh.add(camera);
+
+    return camera;
   }
 }

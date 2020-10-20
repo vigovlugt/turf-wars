@@ -14,7 +14,7 @@ export default class Plane extends GameObject {
   constructor() {
     super(
       new PlaneGeometry(300, 300, 50, 50),
-      new MeshPhongMaterial({ color: 0xf88070 }),
+      new MeshPhongMaterial({ color: 0x45556A }),
       new PlaneShape()
     );
     this.body.quaternion.setFromAxisAngle(new Vec3(1, 0, 0), -Math.PI / 2);
