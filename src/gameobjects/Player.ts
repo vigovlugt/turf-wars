@@ -10,7 +10,7 @@ const RUN_MULTIPLIER = 1.5;
 export default class Player extends GameObject {
   public camera: PerspectiveCamera;
   public controls: PlayerControls;
-  public attack: PlayerAttack;
+  // public attack: PlayerAttack;
 
   constructor() {
     super(
