@@ -17,7 +17,6 @@ import {
 import Player from "./gameobjects/Player";
 import SnowBall from "./gameobjects/SnowBall";
 import GameObject from "./models/GameObject";
-// @ts-ignore
 import CannonDebugRenderer from "./utils/CannonDebugRenderer";
 
 import Box from "./gameobjects/Box";
@@ -27,13 +26,14 @@ export default class MainScene extends Scene {
   public camera: PerspectiveCamera;
   public player: Player;
   public world: World;
+  public solver: GSSolver;
   public cdr: CannonDebugRenderer;
 
   private gameObjects: GameObject[] = [];
 
   constructor() {
     super();
-    this.world = this.createPhysicsWorld();
+    this.initPhysics();
 
     // Box
     this.create(new Box());
@@ -64,14 +64,12 @@ export default class MainScene extends Scene {
     this.gameObjects.push(go);
   }
 
-  createPhysicsWorld() {
-    const world = new World();
-    world.gravity.set(0, -10, 0);
-    world.broadphase = new NaiveBroadphase();
+  initPhysics() {
+    this.world = new World();
+    this.world.gravity.set(0, -10, 0);
+    this.world.broadphase = new NaiveBroadphase();
 
-    this.cdr = new CannonDebugRenderer(this, world);
-
-    return world;
+    this.cdr = new CannonDebugRenderer(this, this.world);
   }
 
   initLights() {
@@ -109,8 +107,8 @@ export default class MainScene extends Scene {
 
     this.gameObjects.forEach((go) => {
       go.mesh.position.copy(go.body.position as any);
-      if (!(go instanceof Player))
-        go.mesh.quaternion.copy(go.body.quaternion as any);
+
+      go.mesh.quaternion.copy(go.body.quaternion as any);
     });
     this.cdr.update();
     this.gameObjects.forEach((go) => go.update(dt));
