@@ -117,7 +117,7 @@ export default class PlayerControls {
     if (this.pressedKeys.includes("shift")) {
       speedMultiplier *= RUN_MULTIPLIER;
     }
-    console.log(this.pressedKeys);
+
     // Convert velocity to world coordinates
     euler.x = this.player.camera.rotation.x;
     euler.y = this.player.mesh.rotation.y;

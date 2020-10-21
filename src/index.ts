@@ -10,11 +10,15 @@ async function main() {
   animate();
 }
 
+let lastTime = performance.now();
+
 function animate() {
-  scene.update();
+  const currentTime = performance.now();
+  scene.update((currentTime - lastTime) / 1000);
   renderer.render(scene, scene.camera);
 
   requestAnimationFrame(animate);
+  lastTime = currentTime;
 }
 
 main();

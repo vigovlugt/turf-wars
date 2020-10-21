@@ -3,21 +3,26 @@ import { CylinderGeometry, MeshPhongMaterial, PerspectiveCamera } from "three";
 
 import GameObject from "../models/GameObject";
 import PlayerControls from "../modules/player/PlayerControls";
+import PlayerSnowball from "../modules/player/PlayerSnowball";
+import MainScene from "../MainScene";
 
 const SPEED = 2;
 const RUN_MULTIPLIER = 1.5;
 
 export default class Player extends GameObject {
   public camera: PerspectiveCamera;
+  public scene: MainScene;
   public controls: PlayerControls;
-  // public attack: PlayerAttack;
+  public snowball: PlayerSnowball;
 
-  constructor() {
+  constructor(scene: MainScene) {
     super(
       new CylinderGeometry(0.5, 0.5, 2, 16),
       new MeshPhongMaterial({ color: 0xffff00 }),
       new Cylinder(0.5, 0.5, 2, 16)
     );
+
+    this.scene = scene;
 
     // this.body = new CapsuleCollider({
     //   heigth: 2,
@@ -34,16 +39,18 @@ export default class Player extends GameObject {
 
     this.camera = this.createCamera();
     this.controls = this.createControls();
+    this.snowball = new PlayerSnowball(this);
   }
 
   createControls() {
-    this.body.linearDamping = 0.975;
+    this.body.linearDamping = 0.99;
 
     return new PlayerControls(this);
   }
 
   update(delta: number) {
     this.controls.update(delta);
+    this.snowball.update(delta);
   }
 
   createCamera() {
