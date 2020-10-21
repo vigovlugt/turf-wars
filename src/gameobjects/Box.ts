@@ -15,8 +15,4 @@ export default class Box extends GameObject {
     this.setMass(10);
     this.setPosition(0, 10, -3);
   }
-
-  update(dt) {
-    console.log();
-  }
 }

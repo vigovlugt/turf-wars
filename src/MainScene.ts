@@ -27,7 +27,7 @@ export default class MainScene extends Scene {
   public camera: PerspectiveCamera;
   public player: Player;
   public world: World;
-  public cdr: CannonDebugRenderer;
+  public cdr?: CannonDebugRenderer;
 
   private gameObjects: GameObject[] = [];
 
@@ -53,7 +53,7 @@ export default class MainScene extends Scene {
     axesHelper.position.set(-5, 1, -5);
     this.add(axesHelper);
 
-    this.player = new Player();
+    this.player = new Player(this);
     this.create(this.player);
     this.camera = this.player.camera;
   }
@@ -69,7 +69,7 @@ export default class MainScene extends Scene {
     world.gravity.set(0, -10, 0);
     world.broadphase = new NaiveBroadphase();
 
-    this.cdr = new CannonDebugRenderer(this, world);
+    // this.cdr = new CannonDebugRenderer(this, world);
 
     return world;
   }
@@ -87,32 +87,15 @@ export default class MainScene extends Scene {
     this.add(light2);
   }
 
-  update() {
-    const dt = 1 / 144;
-
-    // this.gameObjects.forEach((go) => {
-    //   go.body.position.set(
-    //     go.mesh.position.x,
-    //     go.mesh.position.y,
-    //     go.mesh.position.z
-    //   );
-
-    //   go.body.quaternion.set(
-    //     go.mesh.quaternion.x,
-    //     go.mesh.quaternion.y,
-    //     go.mesh.quaternion.z,
-    //     go.mesh.quaternion.w
-    //   );
-    // });
-
-    this.world.step(1 / 144);
+  update(dt: number) {
+    this.world.step(1/144);
 
     this.gameObjects.forEach((go) => {
       go.mesh.position.copy(go.body.position as any);
       if (!(go instanceof Player))
         go.mesh.quaternion.copy(go.body.quaternion as any);
     });
-    this.cdr.update();
+    if (this.cdr) this.cdr.update();
     this.gameObjects.forEach((go) => go.update(dt));
   }
 }
