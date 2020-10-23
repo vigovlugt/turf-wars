@@ -1,24 +1,19 @@
-import MainScene from "./MainScene";
 import Renderer from "./Renderer";
+import ClientGame from "./games/ClientGame";
 
-let scene: MainScene;
-let renderer: Renderer;
-
-async function main() {
-  scene = new MainScene();
-  renderer = new Renderer();
-  animate();
-}
+let game = new ClientGame();
+let renderer = new Renderer();
 
 let lastTime = performance.now();
 
-function animate() {
-  const currentTime = performance.now();
-  scene.update((currentTime - lastTime) / 1000);
-  renderer.render(scene, scene.camera);
+function render() {
+  const now = performance.now();
+  game.update((now - lastTime) / 1000);
 
-  requestAnimationFrame(animate);
-  lastTime = currentTime;
+  renderer.render(game.scene, game.camera);
+
+  requestAnimationFrame(render);
+  lastTime = now;
 }
 
-main();
+render();

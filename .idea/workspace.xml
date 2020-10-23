@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:revert-1-feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a203ee0e-49e1-4f88-b203-d8e3fc154eca" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainScene.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainScene.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderer.ts" afterDir="false" />
@@ -10,6 +46,18 @@
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/player/PlayerAttack.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/player/PlayerControls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/player/PlayerControls.ts" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/games/ClientGame.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/games/ServerGame.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainScene.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Game.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobjects/Box.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobjects/Box.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +86,12 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vigov\AppData\Roaming\npm\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="ts.external.directory.path" value="C:\Users\vigov\Documents\Projects\NodeJS\turf-wars\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vigov\Documents\Projects\NodeJS\turf-wars\src\games" />
       <recent name="C:\Users\vigov\Documents\Projects\NodeJS\turf-wars\src\modules\player" />
       <recent name="C:\Users\vigov\Documents\Projects\NodeJS\turf-wars\src\GameObjects" />
       <recent name="C:\Users\vigov\Documents\Projects\NodeJS\turf-wars\src" />
@@ -95,18 +144,49 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603189185072</updated>
+<<<<<<< Updated upstream
       <workItem from="1603189186168" duration="7317000" />
       <workItem from="1603300994160" duration="3446000" />
+=======
+      <workItem from="1603189186168" duration="5209000" />
+      <workItem from="1603352310940" duration="17000" />
+      <workItem from="1603471258481" duration="2596000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <option name="shellPath" value="C:\Program Files\Git\bin\bash.exe" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix issues with git" />
+    <MESSAGE value="Add bundle.js to git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add bundle.js to git" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1603195663206">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603311712867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311712867" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1603311738679">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+<<<<<<< Updated upstream
     <state x="740" y="274" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603195663206" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1603310968337">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -125,8 +205,28 @@
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603310968337" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1603195673457">
+=======
+    <state x="740" y="274" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311738679" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1603311791911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603195673457" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311791911" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1603311791910">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311791910" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1603311791909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311791909" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1603311791910">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311791910" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1603311739658">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603311739658" />
   </component>
 </project>
