@@ -17,6 +17,7 @@ export default class PlayerControls {
 
   constructor(player: Player) {
     this.player = player;
+
     this.setListeners();
   }
 
@@ -58,11 +59,11 @@ export default class PlayerControls {
       new CANNON.Vec3(0, 1, 0),
       this.player.mesh.rotation.y
     );
-    this.player.camera.rotation.x -= movementY * 0.002;
+    this.player.camera!.rotation.x -= movementY * 0.002;
 
-    this.player.camera.rotation.x = Math.max(
+    this.player.camera!.rotation.x = Math.max(
       -Math.PI / 2,
-      Math.min(Math.PI / 2, this.player.camera.rotation.x)
+      Math.min(Math.PI / 2, this.player.camera!.rotation.x)
     );
   }
 
@@ -88,8 +89,8 @@ export default class PlayerControls {
   public update(delta: number) {
     if (!this.enabled) return;
 
-    var inputVelocity = new THREE.Vector3();
-    var euler = new THREE.Euler();
+    let inputVelocity = new THREE.Vector3();
+    const euler = new THREE.Euler();
 
     if (this.pressedKeys.includes("w")) {
       inputVelocity.z = -1;
@@ -119,7 +120,7 @@ export default class PlayerControls {
     }
 
     // Convert velocity to world coordinates
-    euler.x = this.player.camera.rotation.x;
+    euler.x = this.player.camera!.rotation.x;
     euler.y = this.player.mesh.rotation.y;
     euler.order = "XYZ";
 

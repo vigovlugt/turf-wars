@@ -5,7 +5,7 @@ import Plane from "../gameobjects/Plane";
 import SnowBall from "../gameobjects/SnowBall";
 
 export default class Game {
-  private gameObjects: GameObject[] = [];
+  gameObjects: GameObject[] = [];
   protected world: World;
 
   constructor() {
@@ -36,6 +36,7 @@ export default class Game {
   }
 
   update(dt: number) {
+    this.world.step(dt);
     this.gameObjects.forEach((go) => go.update(dt));
   }
 }

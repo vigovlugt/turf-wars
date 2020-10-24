@@ -82,6 +82,6 @@ export default class PlayerSnowball {
     const worldVelocity = snowball.body.quaternion.vmult(localVelocity);
     snowball.body.velocity.copy(worldVelocity);
 
-    this.player.scene.create(snowball);
+    this.player.game.create(snowball);
   }
 }

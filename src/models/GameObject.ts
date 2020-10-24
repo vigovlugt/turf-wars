@@ -1,9 +1,16 @@
 import { Body, BODY_TYPES, Shape } from "cannon-es";
 import { Geometry, Material, Mesh } from "three";
+import IGameObject from "../interfaces/IGameObject";
+import GameObjectType from "../constants/GameObjectType";
 
 export default class GameObject {
+  public id?: number;
+
   public mesh: Mesh = new Mesh();
   public body: Body = new Body();
+
+  public type = GameObjectType.EMPTY;
+
   constructor(
     geometry?: Geometry,
     material?: Material,
@@ -29,7 +36,7 @@ export default class GameObject {
     this.mesh.material = material;
   }
 
-  setPosition(x?: number, y?: number, z?: number) {
+  setPosition(x: number, y: number, z: number) {
     this.mesh.position.set(x, y, z);
     this.body.position.set(x, y, z);
   }
@@ -47,5 +54,36 @@ export default class GameObject {
     this.body.addShape(shape);
   }
 
-  update(dt) {}
+  update(dt: number) {}
+
+  serialize(): IGameObject {
+    const position = this.body.position;
+    const quaternion = this.body.quaternion;
+    return {
+      type: this.type,
+      id: this.id!,
+      position: { x: position.x, y: position.y, z: position.z },
+      rotation: {
+        x: quaternion.x,
+        y: quaternion.y,
+        z: quaternion.z,
+        w: quaternion.w,
+      },
+    };
+  }
+
+  sync(go:IGameObject){
+    this.setPosition(
+        go.position.x,
+        go.position.y,
+        go.position.z
+    );
+
+    this.body.quaternion.set(
+        go.rotation.x,
+        go.rotation.y,
+        go.rotation.z,
+        go.rotation.w
+    );
+  }
 }
